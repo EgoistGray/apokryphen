@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <NumberPicker
+        android:theme="@style/numberPicker"
+        android:id="@+id/second_pick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:solidColor="@color/backgroundColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semiColon2"
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+    <NumberPicker
+        android:theme="@style/numberPicker"
+        android:id="@+id/minute_pick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:solidColor="@color/backgroundColor"
+        app:layout_constraintEnd_toStartOf="@+id/semiColon2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/semiColon1"
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+    <NumberPicker
+        android:theme="@style/numberPicker"
+        android:id="@+id/hour_pick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:solidColor="@color/backgroundColor"
+        app:layout_constraintEnd_toStartOf="@+id/semiColon1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+    <TextView
+        android:id="@+id/semiColon1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:text=":"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hour_pick"
+        app:layout_constraintEnd_toStartOf="@+id/minute_pick"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/hour_pick"
+        app:layout_constraintTop_toTopOf="@+id/hour_pick" />
+
+    <TextView
+        android:id="@+id/semiColon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:layout_marginBottom="63dp"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:text=":"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/minute_pick"
+        app:layout_constraintEnd_toStartOf="@+id/second_pick"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/minute_pick"
+        app:layout_constraintTop_toTopOf="@+id/minute_pick" />
+
+    <TextView
+        android:id="@+id/durationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Duration:"
+        android:textColor="@color/textColor"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/taskName"
+        app:layout_constraintTop_toTopOf="@+id/topGuideline" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Task Name:"
+        android:textColor="@color/textColor"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/taskName"
+        app:layout_constraintStart_toStartOf="@+id/taskName" />
+
+    <EditText
+        android:id="@+id/taskName"
+        android:layout_width="279dp"
+        android:layout_height="57dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="Do Something"
+        android:inputType="textPersonName"
+        android:textColorHighlight="#E91E63"
+        android:textColorHint="@color/textColor"
+        android:textColorLink="#E91E63"
+        app:layout_constraintBottom_toTopOf="@+id/topGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="200dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="durationText"
+        tools:layout_editor_absoluteY="731dp" />
+
+    <Button
+        android:id="@+id/createButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto"
+        android:text="Create Task"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minute_pick" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
